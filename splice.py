@@ -2,7 +2,7 @@ import cv2
 import os
 import argparse
 
-def generateFrames(video, path, prepend, append, leading, start, end):
+def generateFrames(type,video, path, prepend, append, leading, start, end):
     '''
     Generates and saves each frame from start to end in the specified video
 
@@ -18,7 +18,7 @@ def generateFrames(video, path, prepend, append, leading, start, end):
     count = 0
     while success and (end == -1 or count < end):
       if count >= start:
-        cv2.imwrite(os.path.join(path,(prepend + str(count).zfill(leading) + append + ".jpg")), image)     # save frame as JPEG file
+        cv2.imwrite(os.path.join(path,(prepend + str(count).zfill(leading) + append + "." + type)), image)     # save frame as TIFF file
       success,image = vidcap.read()
       count += 1
 
@@ -87,7 +87,14 @@ if __name__ == "__main__":
         required=False,
         default=0
     )
+    parser.add_argument(
+	"--type",
+        type=str,
+        help="The output file format. Only jpg and tif have been tested",
+        required=False,
+        default="tif"
+    )
     args = parser.parse_args()
 
     ##Now, actually do the thing!
-    generateFrames(args.video, args.path, args.prepend, args.append, args.leading, args.start_frame, args.end_frame)
+    generateFrames(args.type,args.video, args.path, args.prepend, args.append, args.leading, args.start_frame, args.end_frame)
