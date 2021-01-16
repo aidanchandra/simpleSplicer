@@ -1,7 +1,5 @@
-**
-
 # simpleSlice
-
+A simple python script that splices a mp4 file into its individual frames with some simple parameters to tune the output and saves them all as jpgs.
 ## If you're a pro 
 If you're at least familiar with python scripts, arguments, and the command line, this should be easy for you to use.
  - Clone the repo or download the zip
@@ -51,8 +49,7 @@ Note, if this is somewhere else, like documents, you can type `cd ~/Documents/si
  Specify a string to put after the number of the frame in the name of the file
  Example to add "raw" to the beginning of the name of each frame image that you're gonna save: `--append capture` results in files called "Xcapture.jpg"
 
-**You can use both!**
- - Example to add "raw" to the beginning and "capture" to the end of the name of each frame image that you're gonna save: `--prepend raw --append capture` results in files called "rawXcapture.jpg"
+ - **You can use both!** Example to add "raw" to the beginning and "capture" to the end of the name of each frame image that you're gonna save: `--prepend raw --append capture` results in files called "rawXcapture.jpg"
 
 - `--leading <number of total available leading zeroes for the number of each frame>` 
  Specify a how many leading zeroes you want
@@ -67,3 +64,6 @@ Note, if this is somewhere else, like documents, you can type `cd ~/Documents/si
  "099.jpg"
  "119.jpg"
  And so on
+## **Future Plans/Help:** 
+I plan to add a GUI if there's  enough demand
+Shoot me an email or open a github issue if you need help
